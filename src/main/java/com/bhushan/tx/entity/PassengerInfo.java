@@ -14,23 +14,23 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class PassengerInfo {
 	@Id
 	@GeneratedValue
-	private Long pId;
+	private Long pid;
 	private String name;
 	private String email;
 	private String source;
-	private String Destination;
+	private String destination;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	private Date travelDate;
-	private String pickupTime;
-	private String arrivalTime;
+	private Date traveldate;
+	private String pickuptime;
+	private String arrivaltime;
 	private double fare;
 
-	public Long getpId() {
-		return pId;
+	public Long getPid() {
+		return pid;
 	}
 
-	public void setpId(Long pId) {
-		this.pId = pId;
+	public void setPid(Long pid) {
+		this.pid = pid;
 	}
 
 	public String getName() {
@@ -58,35 +58,35 @@ public class PassengerInfo {
 	}
 
 	public String getDestination() {
-		return Destination;
+		return destination;
 	}
 
 	public void setDestination(String destination) {
-		Destination = destination;
+		this.destination = destination;
 	}
 
-	public Date getTravelDate() {
-		return travelDate;
+	public Date getTraveldate() {
+		return traveldate;
 	}
 
-	public void setTravelDate(Date travelDate) {
-		this.travelDate = travelDate;
+	public void setTraveldate(Date traveldate) {
+		this.traveldate = traveldate;
 	}
 
-	public String getPickupTime() {
-		return pickupTime;
+	public String getPickuptime() {
+		return pickuptime;
 	}
 
-	public void setPickupTime(String pickupTime) {
-		this.pickupTime = pickupTime;
+	public void setPickuptime(String pickuptime) {
+		this.pickuptime = pickuptime;
 	}
 
-	public String getArrivalTime() {
-		return arrivalTime;
+	public String getArrivaltime() {
+		return arrivaltime;
 	}
 
-	public void setArrivalTime(String arrivalTime) {
-		this.arrivalTime = arrivalTime;
+	public void setArrivaltime(String arrivaltime) {
+		this.arrivaltime = arrivaltime;
 	}
 
 	public double getFare() {

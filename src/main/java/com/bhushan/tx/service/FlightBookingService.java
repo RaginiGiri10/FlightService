@@ -23,18 +23,18 @@ public class FlightBookingService {
 	@Autowired
 	private PaymentInfoRepository paymentInfoRepository;
 
-	@Transactional // (readOnly = false,isolation = Isolation.READ_COMMITTED,propagation =
-					// Propagation.REQUIRED)
-	public FlightBookingAcknowledgement bookFlightTicket(FlightBookingRequest request) throws InsufficientAmountException  {
+	@Transactional
+	public FlightBookingAcknowledgement bookFlightTicket(FlightBookingRequest request)
+			throws InsufficientAmountException {
 
 		PassengerInfo passengerInfo = request.getPassengerInfo();
 		passengerInfo = passengerInfoRepository.save(passengerInfo);
 
 		PaymentInfo paymentInfo = request.getPaymentInfo();
 
-		PaymentUtils.validateCreditLimit(paymentInfo.getAccountNo(), passengerInfo.getFare());
+		PaymentUtils.validateCreditLimit(paymentInfo.getAccountno(), passengerInfo.getFare());
 
-		paymentInfo.setPassengerId(passengerInfo.getpId());
+		paymentInfo.setPassengerid(passengerInfo.getPid());
 		paymentInfo.setAmount(passengerInfo.getFare());
 		paymentInfoRepository.save(paymentInfo);
 		return new FlightBookingAcknowledgement("SUCCESS", passengerInfo.getFare(),

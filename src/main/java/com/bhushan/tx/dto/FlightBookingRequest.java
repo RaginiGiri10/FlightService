@@ -17,7 +17,6 @@ public class FlightBookingRequest {
 
 	public FlightBookingRequest() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public PassengerInfo getPassengerInfo() {

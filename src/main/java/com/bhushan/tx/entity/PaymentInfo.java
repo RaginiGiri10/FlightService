@@ -7,7 +7,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
 @Table(name = "PAYMENT_INFO")
 public class PaymentInfo {
@@ -15,26 +14,26 @@ public class PaymentInfo {
 	@Id
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-	private String paymentId;
-	private String accountNo;
+	private String paymentid;
+	private String accountno;
 	private double amount;
-	private String cardType;
-	private Long passengerId;
+	private String cardtype;
+	private Long passengerid;
 
-	public String getPaymentId() {
-		return paymentId;
+	public String getPaymentid() {
+		return paymentid;
 	}
 
-	public void setPaymentId(String paymentId) {
-		this.paymentId = paymentId;
+	public void setPaymentid(String paymentid) {
+		this.paymentid = paymentid;
 	}
 
-	public String getAccountNo() {
-		return accountNo;
+	public String getAccountno() {
+		return accountno;
 	}
 
-	public void setAccountNo(String accountNo) {
-		this.accountNo = accountNo;
+	public void setAccountno(String accountno) {
+		this.accountno = accountno;
 	}
 
 	public double getAmount() {
@@ -45,20 +44,20 @@ public class PaymentInfo {
 		this.amount = amount;
 	}
 
-	public String getCardType() {
-		return cardType;
+	public String getCardtype() {
+		return cardtype;
 	}
 
-	public void setCardType(String cardType) {
-		this.cardType = cardType;
+	public void setCardtype(String cardtype) {
+		this.cardtype = cardtype;
 	}
 
-	public Long getPassengerId() {
-		return passengerId;
+	public Long getPassengerid() {
+		return passengerid;
 	}
 
-	public void setPassengerId(Long passengerId) {
-		this.passengerId = passengerId;
+	public void setPassengerid(Long passengerid) {
+		this.passengerid = passengerid;
 	}
 
 }
