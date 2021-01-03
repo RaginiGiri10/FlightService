@@ -2,7 +2,6 @@ package com.bhushan.tx.PdfGeneration;
 
 import java.io.FileOutputStream;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.bhushan.tx.dto.FlightBookingAcknowledgement;
