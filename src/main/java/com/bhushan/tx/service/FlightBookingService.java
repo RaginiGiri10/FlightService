@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bhushan.tx.PdfGeneration.FlightAcknowledgementPdf;
 import com.bhushan.tx.dto.FlightBookingAcknowledgement;
 import com.bhushan.tx.dto.FlightBookingRequest;
 import com.bhushan.tx.entity.PassengerInfo;
@@ -37,8 +38,10 @@ public class FlightBookingService {
 		paymentInfo.setPassengerid(passengerInfo.getPid());
 		paymentInfo.setAmount(passengerInfo.getFare());
 		paymentInfoRepository.save(paymentInfo);
-		return new FlightBookingAcknowledgement("SUCCESS", passengerInfo.getFare(),
-				UUID.randomUUID().toString().split("-")[0], passengerInfo);
+		FlightBookingAcknowledgement flightBookingAcknowledgement = new FlightBookingAcknowledgement("SUCCESS",
+				passengerInfo.getFare(), UUID.randomUUID().toString().split("-")[0], passengerInfo);
+		FlightAcknowledgementPdf.createPdf(flightBookingAcknowledgement);
+		return flightBookingAcknowledgement;
 
 	}
 }
